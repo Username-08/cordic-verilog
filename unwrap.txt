@@ -1,0 +1,240 @@
+  wire Z_sign_$;
+  wire signed [c_parameter : 0] X_shr_$, Y_shr_$;
+
+  assign X_shr_$  = X[$] >>> $;  // signed shift right
+  assign Y_shr_$  = Y[$] >>> $;
+
+  //the sign of the current rotation angle
+  assign Z_sign_$ = Z[$][31];  // Z_sign = 1 if Z[$] < 0
+
+  always @(posedge clock) begin
+    // add/subtract shifted data
+    X[$+1] <= Z_sign_$ ? X[$] + Y_shr_$ : X[$] - Y_shr_$;
+    Y[$+1] <= Z_sign_$ ? Y[$] - X_shr_$ : Y[$] + X_shr_$;
+    Z[$+1] <= Z_sign_$ ? Z[$] + atan_table[$] : Z[$] - atan_table[$];
+  end
+  wire Z_sign_0;
+  wire signed [c_parameter : 0] X_shr_0, Y_shr_0;
+
+  assign X_shr_0  = X[0] >>> 0;  // signed shift right
+  assign Y_shr_0  = Y[0] >>> 0;
+
+  //the sign of the current rotation angle
+  assign Z_sign_0 = Z[0][31];  // Z_sign = 1 if Z[0] < 0
+
+  always @(posedge clock) begin
+    // add/subtract shifted data
+    X[0+1] <= Z_sign_0 ? X[0] + Y_shr_0 : X[0] - Y_shr_0;
+    Y[0+1] <= Z_sign_0 ? Y[0] - X_shr_0 : Y[0] + X_shr_0;
+    Z[0+1] <= Z_sign_0 ? Z[0] + atan_table[0] : Z[0] - atan_table[0];
+  end
+  wire Z_sign_1;
+  wire signed [c_parameter : 0] X_shr_1, Y_shr_1;
+
+  assign X_shr_1  = X[1] >>> 1;  // signed shift right
+  assign Y_shr_1  = Y[1] >>> 1;
+
+  //the sign of the current rotation angle
+  assign Z_sign_1 = Z[1][31];  // Z_sign = 1 if Z[1] < 0
+
+  always @(posedge clock) begin
+    // add/subtract shifted data
+    X[1+1] <= Z_sign_1 ? X[1] + Y_shr_1 : X[1] - Y_shr_1;
+    Y[1+1] <= Z_sign_1 ? Y[1] - X_shr_1 : Y[1] + X_shr_1;
+    Z[1+1] <= Z_sign_1 ? Z[1] + atan_table[1] : Z[1] - atan_table[1];
+  end
+  wire Z_sign_2;
+  wire signed [c_parameter : 0] X_shr_2, Y_shr_2;
+
+  assign X_shr_2  = X[2] >>> 2;  // signed shift right
+  assign Y_shr_2  = Y[2] >>> 2;
+
+  //the sign of the current rotation angle
+  assign Z_sign_2 = Z[2][31];  // Z_sign = 1 if Z[2] < 0
+
+  always @(posedge clock) begin
+    // add/subtract shifted data
+    X[2+1] <= Z_sign_2 ? X[2] + Y_shr_2 : X[2] - Y_shr_2;
+    Y[2+1] <= Z_sign_2 ? Y[2] - X_shr_2 : Y[2] + X_shr_2;
+    Z[2+1] <= Z_sign_2 ? Z[2] + atan_table[2] : Z[2] - atan_table[2];
+  end
+  wire Z_sign_3;
+  wire signed [c_parameter : 0] X_shr_3, Y_shr_3;
+
+  assign X_shr_3  = X[3] >>> 3;  // signed shift right
+  assign Y_shr_3  = Y[3] >>> 3;
+
+  //the sign of the current rotation angle
+  assign Z_sign_3 = Z[3][31];  // Z_sign = 1 if Z[3] < 0
+
+  always @(posedge clock) begin
+    // add/subtract shifted data
+    X[3+1] <= Z_sign_3 ? X[3] + Y_shr_3 : X[3] - Y_shr_3;
+    Y[3+1] <= Z_sign_3 ? Y[3] - X_shr_3 : Y[3] + X_shr_3;
+    Z[3+1] <= Z_sign_3 ? Z[3] + atan_table[3] : Z[3] - atan_table[3];
+  end
+  wire Z_sign_4;
+  wire signed [c_parameter : 0] X_shr_4, Y_shr_4;
+
+  assign X_shr_4  = X[4] >>> 4;  // signed shift right
+  assign Y_shr_4  = Y[4] >>> 4;
+
+  //the sign of the current rotation angle
+  assign Z_sign_4 = Z[4][31];  // Z_sign = 1 if Z[4] < 0
+
+  always @(posedge clock) begin
+    // add/subtract shifted data
+    X[4+1] <= Z_sign_4 ? X[4] + Y_shr_4 : X[4] - Y_shr_4;
+    Y[4+1] <= Z_sign_4 ? Y[4] - X_shr_4 : Y[4] + X_shr_4;
+    Z[4+1] <= Z_sign_4 ? Z[4] + atan_table[4] : Z[4] - atan_table[4];
+  end
+  wire Z_sign_5;
+  wire signed [c_parameter : 0] X_shr_5, Y_shr_5;
+
+  assign X_shr_5  = X[5] >>> 5;  // signed shift right
+  assign Y_shr_5  = Y[5] >>> 5;
+
+  //the sign of the current rotation angle
+  assign Z_sign_5 = Z[5][31];  // Z_sign = 1 if Z[5] < 0
+
+  always @(posedge clock) begin
+    // add/subtract shifted data
+    X[5+1] <= Z_sign_5 ? X[5] + Y_shr_5 : X[5] - Y_shr_5;
+    Y[5+1] <= Z_sign_5 ? Y[5] - X_shr_5 : Y[5] + X_shr_5;
+    Z[5+1] <= Z_sign_5 ? Z[5] + atan_table[5] : Z[5] - atan_table[5];
+  end
+  wire Z_sign_6;
+  wire signed [c_parameter : 0] X_shr_6, Y_shr_6;
+
+  assign X_shr_6  = X[6] >>> 6;  // signed shift right
+  assign Y_shr_6  = Y[6] >>> 6;
+
+  //the sign of the current rotation angle
+  assign Z_sign_6 = Z[6][31];  // Z_sign = 1 if Z[6] < 0
+
+  always @(posedge clock) begin
+    // add/subtract shifted data
+    X[6+1] <= Z_sign_6 ? X[6] + Y_shr_6 : X[6] - Y_shr_6;
+    Y[6+1] <= Z_sign_6 ? Y[6] - X_shr_6 : Y[6] + X_shr_6;
+    Z[6+1] <= Z_sign_6 ? Z[6] + atan_table[6] : Z[6] - atan_table[6];
+  end
+  wire Z_sign_7;
+  wire signed [c_parameter : 0] X_shr_7, Y_shr_7;
+
+  assign X_shr_7  = X[7] >>> 7;  // signed shift right
+  assign Y_shr_7  = Y[7] >>> 7;
+
+  //the sign of the current rotation angle
+  assign Z_sign_7 = Z[7][31];  // Z_sign = 1 if Z[7] < 0
+
+  always @(posedge clock) begin
+    // add/subtract shifted data
+    X[7+1] <= Z_sign_7 ? X[7] + Y_shr_7 : X[7] - Y_shr_7;
+    Y[7+1] <= Z_sign_7 ? Y[7] - X_shr_7 : Y[7] + X_shr_7;
+    Z[7+1] <= Z_sign_7 ? Z[7] + atan_table[7] : Z[7] - atan_table[7];
+  end
+  wire Z_sign_8;
+  wire signed [c_parameter : 0] X_shr_8, Y_shr_8;
+
+  assign X_shr_8  = X[8] >>> 8;  // signed shift right
+  assign Y_shr_8  = Y[8] >>> 8;
+
+  //the sign of the current rotation angle
+  assign Z_sign_8 = Z[8][31];  // Z_sign = 1 if Z[8] < 0
+
+  always @(posedge clock) begin
+    // add/subtract shifted data
+    X[8+1] <= Z_sign_8 ? X[8] + Y_shr_8 : X[8] - Y_shr_8;
+    Y[8+1] <= Z_sign_8 ? Y[8] - X_shr_8 : Y[8] + X_shr_8;
+    Z[8+1] <= Z_sign_8 ? Z[8] + atan_table[8] : Z[8] - atan_table[8];
+  end
+  wire Z_sign_9;
+  wire signed [c_parameter : 0] X_shr_9, Y_shr_9;
+
+  assign X_shr_9  = X[9] >>> 9;  // signed shift right
+  assign Y_shr_9  = Y[9] >>> 9;
+
+  //the sign of the current rotation angle
+  assign Z_sign_9 = Z[9][31];  // Z_sign = 1 if Z[9] < 0
+
+  always @(posedge clock) begin
+    // add/subtract shifted data
+    X[9+1] <= Z_sign_9 ? X[9] + Y_shr_9 : X[9] - Y_shr_9;
+    Y[9+1] <= Z_sign_9 ? Y[9] - X_shr_9 : Y[9] + X_shr_9;
+    Z[9+1] <= Z_sign_9 ? Z[9] + atan_table[9] : Z[9] - atan_table[9];
+  end
+  wire Z_sign_10;
+  wire signed [c_parameter : 0] X_shr_10, Y_shr_10;
+
+  assign X_shr_10  = X[10] >>> 10;  // signed shift right
+  assign Y_shr_10  = Y[10] >>> 10;
+
+  //the sign of the current rotation angle
+  assign Z_sign_10 = Z[10][31];  // Z_sign = 1 if Z[10] < 0
+
+  always @(posedge clock) begin
+    // add/subtract shifted data
+    X[10+1] <= Z_sign_10 ? X[10] + Y_shr_10 : X[10] - Y_shr_10;
+    Y[10+1] <= Z_sign_10 ? Y[10] - X_shr_10 : Y[10] + X_shr_10;
+    Z[10+1] <= Z_sign_10 ? Z[10] + atan_table[10] : Z[10] - atan_table[10];
+  end
+  wire Z_sign_11;
+  wire signed [c_parameter : 0] X_shr_11, Y_shr_11;
+
+  assign X_shr_11  = X[11] >>> 11;  // signed shift right
+  assign Y_shr_11  = Y[11] >>> 11;
+
+  //the sign of the current rotation angle
+  assign Z_sign_11 = Z[11][31];  // Z_sign = 1 if Z[11] < 0
+
+  always @(posedge clock) begin
+    // add/subtract shifted data
+    X[11+1] <= Z_sign_11 ? X[11] + Y_shr_11 : X[11] - Y_shr_11;
+    Y[11+1] <= Z_sign_11 ? Y[11] - X_shr_11 : Y[11] + X_shr_11;
+    Z[11+1] <= Z_sign_11 ? Z[11] + atan_table[11] : Z[11] - atan_table[11];
+  end
+  wire Z_sign_12;
+  wire signed [c_parameter : 0] X_shr_12, Y_shr_12;
+
+  assign X_shr_12  = X[12] >>> 12;  // signed shift right
+  assign Y_shr_12  = Y[12] >>> 12;
+
+  //the sign of the current rotation angle
+  assign Z_sign_12 = Z[12][31];  // Z_sign = 1 if Z[12] < 0
+
+  always @(posedge clock) begin
+    // add/subtract shifted data
+    X[12+1] <= Z_sign_12 ? X[12] + Y_shr_12 : X[12] - Y_shr_12;
+    Y[12+1] <= Z_sign_12 ? Y[12] - X_shr_12 : Y[12] + X_shr_12;
+    Z[12+1] <= Z_sign_12 ? Z[12] + atan_table[12] : Z[12] - atan_table[12];
+  end
+  wire Z_sign_13;
+  wire signed [c_parameter : 0] X_shr_13, Y_shr_13;
+
+  assign X_shr_13  = X[13] >>> 13;  // signed shift right
+  assign Y_shr_13  = Y[13] >>> 13;
+
+  //the sign of the current rotation angle
+  assign Z_sign_13 = Z[13][31];  // Z_sign = 1 if Z[13] < 0
+
+  always @(posedge clock) begin
+    // add/subtract shifted data
+    X[13+1] <= Z_sign_13 ? X[13] + Y_shr_13 : X[13] - Y_shr_13;
+    Y[13+1] <= Z_sign_13 ? Y[13] - X_shr_13 : Y[13] + X_shr_13;
+    Z[13+1] <= Z_sign_13 ? Z[13] + atan_table[13] : Z[13] - atan_table[13];
+  end
+  wire Z_sign_14;
+  wire signed [c_parameter : 0] X_shr_14, Y_shr_14;
+
+  assign X_shr_14  = X[14] >>> 14;  // signed shift right
+  assign Y_shr_14  = Y[14] >>> 14;
+
+  //the sign of the current rotation angle
+  assign Z_sign_14 = Z[14][31];  // Z_sign = 1 if Z[14] < 0
+
+  always @(posedge clock) begin
+    // add/subtract shifted data
+    X[14+1] <= Z_sign_14 ? X[14] + Y_shr_14 : X[14] - Y_shr_14;
+    Y[14+1] <= Z_sign_14 ? Y[14] - X_shr_14 : Y[14] + X_shr_14;
+    Z[14+1] <= Z_sign_14 ? Z[14] + atan_table[14] : Z[14] - atan_table[14];
+  end

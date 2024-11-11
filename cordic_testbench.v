@@ -26,7 +26,7 @@ module cordic_test;
     angle      = 0;
     Xin        = VALUE;  // Xout = 32000*cos(angle)
     Yin        = 1'd0;
-    i          = 60;
+    i          = 45;
     // Yout = 32000*sin(angle)
 
     #1000;
@@ -40,14 +40,16 @@ module cordic_test;
     @(posedge CLK_100MHZ);
     start = FALSE;
     angle = ((1 << 32)*i)/360;    // example: 45 deg = 45/360 * 2^32 = 32'b00100000000000000000000000000000 = 45.000 degrees -> atan(2^0)
-    $display("angle = %d, %h", i, angle);
+    $display("angle = %d, %b", i, angle);
     // end
 
     #500 $write("Simulation has finished");
-    $stop;
+    $display("xout = %d, %h, %b", Xout, Xout, Xout);
+    $display("yout = %d, %h, %b", Yout, Yout, Yout);
+    $finish;
   end
 
-  CORDIC sine_cosine (
+  sine_cosine dut (
       CLK_100MHZ,
       angle,
       Xin,
